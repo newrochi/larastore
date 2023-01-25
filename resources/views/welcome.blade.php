@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -130,3 +130,12 @@
         </div>
     </body>
 </html>
+ --}}
+
+@extends('layouts.app')
+@section('title','Home Page- Online Store')
+@section('content')
+<div class="text-center">
+    Welcome to the App
+</div>
+@endsection
