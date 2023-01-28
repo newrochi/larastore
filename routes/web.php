@@ -26,5 +26,6 @@ Route::get('/products/{id}', [ProductController::class,'show'])->name('product.s
 Route::get('/admin', [AdminHomeController::class,'index'])->name('admin.home.index');
 Route::get('/admin/products', [AdminProductController::class,'index'])->name('admin.product.index');
 Route::post('/admin/products/store', [AdminProductController::class,'store'])->name('admin.product.store');
+Route::delete('/admin/products/{id}/delete', [AdminProductController::class,'delete'])->name('admin.product.delete');
 
 
