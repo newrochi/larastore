@@ -27,6 +27,10 @@ Route::get('/products/{id}', [ProductController::class,'show'])->name('product.s
 Route::get('/cart', [CartController::class,'index'])->name('cart.index');
 Route::get('/cart/delete', [CartController::class,'delete'])->name('cart.delete');
 Route::post('/cart/add/{id}', [CartController::class,'add'])->name('cart.add');
+Route::middleware('auth')->group(function(){
+    Route::get('/cart/purchase', [CartController::class,'purchase'])->name('cart.purchase');
+});
+
 
 
 Route::middleware('admin')->group(function(){
