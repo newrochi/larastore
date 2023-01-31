@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::get('/cart/delete', [CartController::class,'delete'])->name('cart.delete'
 Route::post('/cart/add/{id}', [CartController::class,'add'])->name('cart.add');
 Route::middleware('auth')->group(function(){
     Route::get('/cart/purchase', [CartController::class,'purchase'])->name('cart.purchase');
+    Route::get('/my-account/orders', [MyAccountController::class,'orders'])->name('myaccount.orders');
 });
 
 
